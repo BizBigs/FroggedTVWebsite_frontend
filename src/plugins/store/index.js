@@ -1,8 +1,14 @@
-import { createStore } from "vuex";
+import { reactive, inject } from 'vue'
 
-export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+// global states
+export const stateSymbol = Symbol('state')
+export const createState = () => reactive({
+    backendRoute: 'http://127.0.0.1:8000/',
+    currentUser: {},
+    logIn: userData => {
+        createState.currentUser = userData
+        console.log(createState.currentUser)
+    }
+})
+
+export const useState = () => inject(stateSymbol)
