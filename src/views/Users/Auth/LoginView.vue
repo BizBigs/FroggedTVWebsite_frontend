@@ -1,13 +1,25 @@
 <template>
-TATA
+  <q-card class="fixed-center">
+    <q-card-section>
+      <LoginForm></LoginForm>
+    </q-card-section>
+  </q-card>
 </template>
 
 <script>
+import LoginForm from "@/components/Forms/Auth/LoginForm";
+
 export default {
-  name: "LoginView"
-}
+  name: "LoginView",
+
+  components: {
+    LoginForm
+  }
+};
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.q-card {
+  width: 25%;
+}
 </style>
