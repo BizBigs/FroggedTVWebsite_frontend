@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./plugins/router";
-import store from "./plugins/store";
+import router from "./utils/plugins/router";
+import store from "./utils/plugins/store";
 import { Quasar } from "quasar";
 import quasarUserOptions from "./quasar-user-options";
 
