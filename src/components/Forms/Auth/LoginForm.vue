@@ -25,7 +25,8 @@
 <script>
 import {ref} from "vue";
 import axiosApi from "@/utils/plugins/axios/axiosApi";
-//import axiosApi from "@/utils/plugins/axios/axiosApi";
+import {store} from "@/utils/plugins/store/store";
+import router from "@/utils/plugins/router/index";
 
 export default {
   name: "LoginForm",
@@ -37,7 +38,10 @@ export default {
     const onSubmit = () => {
       axiosApi.post('/login', {nickname: identifier.value, password: password.value})
           .then(response => {
-            console.log(response);
+            let user = response.data.user;
+            user.token = response.data.token;
+            store.logUser(user);
+            router.push({name: 'Home'});
           })
           .catch(error => {
             console.log(error);
