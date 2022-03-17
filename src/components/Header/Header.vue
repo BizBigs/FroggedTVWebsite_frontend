@@ -6,7 +6,7 @@
           <img :src="logo" />
         </q-avatar>
       </q-toolbar-title>
-      <div v-if="!store.isLoggedIn()">
+      <div v-if="!store.isLoggedIn() && $router.currentRoute.value.name === 'Login'">
         <q-btn
           outline
           rounded
@@ -16,7 +16,17 @@
           class="text-white"
         />
       </div>
-      <div v-else>
+      <div v-if="$router.currentRoute.value.name === 'Register'">
+        <q-btn
+            outline
+            rounded
+            color="secondary"
+            label="SE CONNECTER"
+            @click="onClickLogin"
+            class="text-white"
+        />
+      </div>
+      <div v-if="store.isLoggedIn()">
         <q-tabs v-model="tab">
           <q-tab name="news" label="News" />
           <q-tab name="calendar" label="Calendrier" />
@@ -52,7 +62,11 @@ export default {
       router.push({ name: "Register" });
     };
 
-    return { tab, logo, onClickRegister };
+    const onClickLogin = () => {
+      router.push({ name: "Login" });
+    };
+
+    return { tab, logo, onClickRegister, onClickLogin };
   },
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
   <q-page>
     <q-card class="fixed-center">
-      <RegisterForm />
+      <q-card-section>
+        <RegisterForm />
+      </q-card-section>
     </q-card>
   </q-page>
 </template>
@@ -18,4 +20,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.q-card {
+  width: 25%;
+}
+</style>

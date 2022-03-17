@@ -2,18 +2,20 @@
   <q-form @submit="onSubmit">
     <q-input
       rounded
-      standout
+      outlined
       v-model="form.identifier"
       label="Pseudo ou E-mail"
-      :rules="[(val) => !!val || 'Champs obligatoire.']"
+      :rules="[(val) => !!val]"
+      lazy-rules="ondemand"
     />
     <q-input
       rounded
-      standout
+      outlined
       v-model="form.password"
       label="Mot de passe"
       :type="isPwd ? 'password' : 'text'"
-      :rules="[(val) => !!val || 'Champ obligatoire.']"
+      :rules="[(val) => !!val]"
+      lazy-rules="ondemand"
     >
       <template v-slot:append>
         <q-icon
