@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 export const store = reactive({
   user: {},
@@ -12,5 +12,5 @@ export const store = reactive({
     }
     console.log("tata");
     return true;
-  }
-})
+  },
+});

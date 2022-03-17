@@ -1,12 +1,18 @@
 import { Notify } from "quasar";
-import imageAxe from '@/assets/axe_angry.jpeg'
+import imageAxe from "@/assets/axe_angry.jpeg";
 
-export default {
-    NotificationError(message) {
-        Notify.create({
-            color: 'negative',
-            message: message,
-            avatar: imageAxe
-        });
-    }
-}
+const commonSetup = {
+  position: "top",
+  progress: true,
+};
+
+const NotificationsSnackbar = {
+  NotificationError(message) {
+    commonSetup.color = "negative";
+    commonSetup.avatar = imageAxe;
+    commonSetup.message = message;
+    Notify.create(commonSetup);
+  },
+};
+
+export default NotificationsSnackbar;

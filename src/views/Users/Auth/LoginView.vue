@@ -1,14 +1,12 @@
 <template>
-    <q-page>
-      <q-card class="fixed-center">
-        <q-card-section>
-
-        </q-card-section>
-        <q-card-section>
-          <LoginForm></LoginForm>
-        </q-card-section>
-      </q-card>
-    </q-page>
+  <q-page>
+    <q-card class="fixed-center">
+      <q-card-section></q-card-section>
+      <q-card-section>
+        <LoginForm></LoginForm>
+      </q-card-section>
+    </q-card>
+  </q-page>
 </template>
 
 <script>
@@ -18,8 +16,8 @@ export default {
   name: "LoginView",
 
   components: {
-    LoginForm
-  }
+    LoginForm,
+  },
 };
 </script>
 
@@ -27,6 +25,4 @@ export default {
 .q-card {
   width: 25%;
 }
-
-
 </style>
